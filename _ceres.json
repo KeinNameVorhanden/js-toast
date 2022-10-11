@@ -3,7 +3,7 @@
 		"bundle": [
 			{
 				"entry": "toast.js",
-				"export": "iqwerty"
+				"export": "toaster"
 			}
 		]
 	}
