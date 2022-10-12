@@ -131,7 +131,7 @@ export const toast = (() => {
 	 * @param {Object} transitions Optional; the Transitions object. This should not be used unless you know what you're doing
 	 * @param {Object} __internalDefaultSettings For internal use only. Used for Snackbar.
 	 */
-	function createNew(text, options, transitions) {
+	function toast(text, options, transitions) {
 		const _transitions = transitions || Transitions;
 
 		if(getToastStage() !== undefined) {
@@ -215,7 +215,7 @@ export const toast = (() => {
 		if(toastQueue.length > 0) {
 			// Show the rest of the Toasts in the queue if they exist.
 			const newToast = toastQueue.shift();
-			createNew(newToast.text, newToast.options, newToast.transitions);
+			toast(newToast.text, newToast.options, newToast.transitions);
 		}
 	}
 
@@ -226,6 +226,4 @@ export const toast = (() => {
 	function setToastStage(newToastStage) {
 		toastStage = newToastStage;
 	}
-
-	return createNew
 })();
